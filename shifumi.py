@@ -1,35 +1,41 @@
 #SHIFUMI:
 #-------
+#1=Stone    2=Scissor    3=Paper
 
+name=input("Hello, first enter your name: ")
 
-name=input("Bonjour, pour commencer la partie veuillez entrer votre nom: ")
-scoreUser=0
-scoreComp=0
 
 import random
 liste = [ 1, 2, 3]
+scoreU=0
+scoreC=0
 
 
 
 
 
+try:
+   while scoreU or scoreC != 3:
+         print(name,",tap:\n 1 to play Stone,\n 2 to play Scissor,\n 3 to play Paper")  
+         user=int(input("Choose!"))
+         comp= random.choice(liste)
+         
 
-while scoreUser or scoreComp != 3:
-    print(name,",tapez:\n 1 pour jouer Pierre,\n 2 pour jouer Ciseaux,\n 3 pour jouer Feuille")  
-    user=int(input("Choisissez!"))
-    comp= random.choice(liste)
-
-    if user==3 and comp==1:
-       print("La feuille bat la pierre!")
-    if user==2 and comp==3:
-       print("Les Ciseaux battent la Feuille!")
-    if user==1 and comp==2:
-       print("La Pierre bat les ciseaux")
-    if user==comp:
-       print("DRAW!")
-    
-
-    
-    
-
-
+         if user==3 and comp==1:
+            print("Paper beat Stone!")
+            scoreU += 1
+            print ("Bravo! Your score:", scoreU,"-Computer: ",scoreC)
+         if user==2 and comp==3:
+            print("Scissor beat Paper!")
+            scoreU += 1
+            print ("Bravo! Your score:", scoreU,"-Computer: ",scoreC)
+         if user==1 and comp==2:
+            print("Stone beat Scissor")
+            scoreU += 1
+            print ("Bravo! Your score:", scoreU,"-Computer: ",scoreC)
+         if user==comp:
+            print("DRAW!")
+            print ( "Your score:", scoreU,"-Computer: ",scoreC)
+except ValueError:
+       pass
+       print("Invalid command.")
