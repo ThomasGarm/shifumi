@@ -1,6 +1,11 @@
 #SHIFUMI:
 #-------
 #1=Stone    2=Scissor    3=Paper
+
+
+   
+      
+
 print("=====================================")
 name=input("Hello, first enter your name: ")
 print("=====================================")
@@ -13,7 +18,7 @@ scoreC=0 #Computer score
 
 
 try:
-   while scoreU or scoreC != 3:
+   while scoreU != 3 or scoreC != 3:
          print(name,",tap:\n 1 to play Stone,          2 to play Scissor,            3 to play Paper")  
          user=int(input("Choose!"))
          comp= random.choice(liste)
@@ -60,21 +65,27 @@ try:
             print ("Too Bad! Your score:", scoreU,"-Computer: ",scoreC)
             print ("------------------------------------------------")
 
+
+
          if scoreU == 3 or scoreC == 3:
-            print("============================================")
-            text = input("Continue ? Y/N :")
-            if text== "Y":
-               scoreU=0
-               scoreC=0
-            if text == "N":
-               print:("=========")
-               print("Game Over")
-               print("==========")
-               break
-            print("invalid command")
-      
+               print("============================================")
+               text = input("Continue ? Y/N :") #avoid breaking if user input too fast
+               if text== "Y":
+                  scoreU=0
+                  scoreC=0
+               if text == "N":
+                  print:("=========")
+                  print("Game Over")
+                  print("==========")
+                  break
+               if text not in ("Y","N"):
+                  print("invalid command")
+
 except ValueError:
        print("Invalid command")
+               
+      
+
       
 
 
