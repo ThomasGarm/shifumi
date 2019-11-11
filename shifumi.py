@@ -68,28 +68,22 @@ try: #let's introduce all cases.
 
 
          if scoreU == 3 or scoreC == 3: #condition that engage end game
-               print("============================================")
-               text = input("Continue ? Y/N :") #avoid breaking if user input too fast
+            print("============================================")
+            text = input("Continue ? Y/N :") #avoid breaking if user input too fast
          
-               if text== "Y":#score réinitialisation
+            if text== "Y":#score réinitialisation
                   scoreU=0
                   scoreC=0
-               if text == "N":#end game
+       
+            if text == "N":#end game
                   print:("=========")
                   print("Game Over")
                   print("==========")
-                  break
-               if text not in ("Y","N"):
+                  exit()
+            if text not in ("Y","N"):
                   print("invalid command")
+                  pass
                   
 
 except: 
-  pass
-      
-               
-      
-
-      
-
-
-          
+  pass         
