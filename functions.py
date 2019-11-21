@@ -1,7 +1,8 @@
 from random import randint
+import sys
 
 choice=["pierre", "feuille", "ciseaux"]
-
+again = ["yes", "no"]
 
 def user_name():
     user=input("choose your name")
@@ -19,10 +20,10 @@ def control_user_name(user):
 
 def user_choice():
     print("choose between pierre, feuille and ciseaux")
-    user_entry=input("your choice").lower()
+    user_entry=input("your choice: ").lower()
     while control_user_choice(user_entry) is False:
         print("choose between pierre, feuille and ciseaux")
-        user_entry=input("your choice").lower()
+        user_entry=input("your choice: ").lower()
     return user_entry
 
 
@@ -45,4 +46,19 @@ def compare(choosen, computer, score):
         else:
             score["computer"] += 1
     return score
+
+def exit_game():
+    echap=input("Continue ? yes/no").lower()
+    while control_exit_game(echap) is False:
+        print("Wrong input")
+        echap=input("Continue ? yes/no").lower()
+    return echap
+
+def control_exit_game(echap):
+    action= True
+    try:
+        assert echap in again
+    except AssertionError as a:
+        action= False
+    return action
 

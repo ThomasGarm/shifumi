@@ -12,5 +12,13 @@ while score["player"] != 3 and score["computer"] != 3:
     print("computer play :{}".format(computer))
     print("{} score {} / computer score {}".format(user, score["player"], score["computer"]))
 
+    while score["player"] == 3 or score["computer"] == 3:
+        end = exit_game()
+        if end == "yes":
+            score["player"] = 0
+            score["computer"] = 0
+        elif end == "no":
+            sys.exit(1)
+
 
 
